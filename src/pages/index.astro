@@ -1,46 +1,26 @@
 ---
-// @ts-nocheck
+import MainLayout from "../layouts/MainLayout.astro";
+import Switcher from "../components/Switcher.astro";
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<form
-			netlify
-			data-netlify="true"
-			netlify-honeypot="bot-field"
-			name="Contact"
-			method="POST"
-			action="/success"
-		>
-			<p class="hidden">
-				<label>
-					Don't fill this out if you're human: <input name="bot-field" />
-				</label>
-			</p>
-			<input type="hidden" name="form-name" value="Contact" />
-			<div>
-				<label>Name*</label><input type="text" name="name" required />
-			</div>
-			<div>
-				<label>Email*</label><input type="email" name="email" required />
-			</div>
-			<div>
-				<label>Message*</label>
-				<textarea name="message" required></textarea>
-			</div>
-			<div>
-				<label>If you're inviting me to an event, tell me about it</label>
-				<textarea name="event_details"></textarea>
-			</div>
-			<button type="submit">Send</button>
-		</form>
 
-	</body>
-</html>
+<MainLayout pageName="index">
+	<Switcher who="general" />
+	<p>
+		I'm a Software Engineer that can make you laugh about
+		working <span class="rainbow">in Tech</span>, working <span class="rainbow">with Tech</span>,	or working <span class="rainbow">on Tech</span>.</span>
+	</p>
+
+	<ul>
+		<li>You use technology every day, even in things you don't really think about. But I do. <span class="rainbow">And they're hilarious.</span></li>
+		<li>Your friends who don't know how to use technology? <span class="rainbow">They're hilarious too.</span> I will totally rat them out.</li>
+		<li>Your friends who do know how to use technology? <span class="rainbow">They're also hilarious.</span> I'll tell you about them.</li>
+		<li>Your friends who <strong><em>are</em></strong> technology? They're me. <span class="rainbow">Let me explain why I'm hilarious.</span></li>
+	</ul>
+	<div class="contact-me">
+		Want more? <a href="videos">watch my videos,</a> or <a href="/invite">invite me to your event!</a>
+	</div>
+	<p class="smaller">I mean... Look at this website. I totally <a href="https://github.com/mooeypoo/technically.lol/" target="_blank">made it</a>. </p>
+</MainLayout>
+
+<style lang="scss">
+</style>
